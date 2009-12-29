@@ -1,10 +1,8 @@
-;; DESCRIPTION: topfunky settings
+;; DESCRIPTION: el settings
 
 ;; Manually set PATH for use by eshell, rspec-mode, etc.
 (let ((path))
-  (setq path (concat "/opt/ruby-enterprise/bin:"
-                     "~/bin:"
-                     "~/src/homebrew/bin:"
+  (setq path (concat "~/bin:"
                      "/usr/local/bin:"
                      "/usr/bin:"
                      "/bin"))
@@ -80,18 +78,6 @@
 
 ;; Major Modes
 
-;; Python
-;; Live cyclomatic complexity script from @garybernhardt
-;; http://blog.extracheese.org/2009/11/refactoring_a_cyclomatic_complexity_script.html
-;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/pycomplexity"))
-;; (require 'linum)
-;; (require 'pycomplexity)
-;; (add-hook 'python-mode-hook
-;;           (function (lambda ()
-;;                       (flymake-mode)
-;;                       (linum-mode)
-;;                       (pycomplexity-mode))))
-
 ;; ruby-mode
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ruby-complexity"))
 (require 'linum)
@@ -158,13 +144,6 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rspec-mode"))
 (require 'rspec-mode)
 
-;; Custom task for PeepCode publishing
-(defun rake-generate-html ()
-  (interactive)
-  (rake "generate_html"))
-(global-set-key [(meta shift r)] 'rake-generate-html)
-
-
 (autoload 'applescript-mode "applescript-mode" "major mode for editing AppleScript source." t)
 (setq auto-mode-alist
       (cons '("\\.applescript$" . applescript-mode) auto-mode-alist))
@@ -195,9 +174,6 @@
 ;; XCODE
 (require 'objc-c-mode)
 
-;; (setq c-default-style "bsd"
-;;       c-basic-offset 2)
-
 (require 'cc-menus)
 
 (require 'xcode)
@@ -218,9 +194,6 @@
 
 ;; gist
 (require 'gist)
-
-;; Mercurial
-;;(require 'mercurial)
 
 ;; Color Themes
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
