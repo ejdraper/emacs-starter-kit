@@ -251,7 +251,9 @@
 (server-start)
 
 ;; Activate theme
-(load (concat dotfiles-dir "topfunky-theme.el"))
-(color-theme-topfunky)
+(require 'color-theme)
+(color-theme-initialize)
+(load (concat dotfiles-dir "vendor/zen-and-art.el"))
+(color-theme-zen-and-art)
 
 (eshell)
