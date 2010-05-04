@@ -244,6 +244,10 @@
 
 (global-set-key [(control \])] 'indent-rigidly)
 
+;; Copy/paste
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+
 ;; Other
 
 (prefer-coding-system 'utf-8)
